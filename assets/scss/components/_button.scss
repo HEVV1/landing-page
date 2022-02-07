@@ -1,0 +1,27 @@
+/*
+btn:link    --> Not visited link state
+btn:visited --> Visited link state
+*/
+.btn:link,
+.btn:visited{
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba($color: $color_2, $alpha: .2);
+}
+
+.btn:active{
+  transform: translateY(-1px);
+}
+
+.btn-white{
+  background-color: $color_1;
+  color: $color_2;
+}

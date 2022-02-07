@@ -1,0 +1,19 @@
+/* Colors -----------------------------------------------------------------*/
+$color_1: #FFFFFF; // White
+$color_2: #000000; // Black
+$color_3: #7ED56F; // Light Green
+$color_4: #55C57A; // Medium Green
+$color_5: #28B485; // Green
+$color_6: #777777; // Grey
+/* Fonts ------------------------------------------------------------------*/
+$font_awesome_5_pro: 'Font Awesome 5 Pro';
+$font_family_lato: 'Lato', sans-serif;
+$default_font_family: $font_family_lato;
+$default_font_size: 16px;
+$default_font_weight: 400;
+$default_line_height: 1.7;
+$default_font_color: $color_2;
+/* Other ------------------------------------------------------------------*/
+$regular_content_width: 1180px + 54px; // content + outside gutter (left and right together)
+$image_directory: '../../images/';
+$default_transition_time: 300ms;

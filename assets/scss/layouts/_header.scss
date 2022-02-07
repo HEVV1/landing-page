@@ -1,0 +1,59 @@
+.block-header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba($color: $color_3, $alpha: 0.8), rgba($color: $color_5, $alpha: 0.8)),
+    url(../../images/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  .logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    img {
+      height: 35px;
+    }
+  }
+  .wrapper-text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    .styled-as-h1{
+      backface-visibility: hidden;
+      .styled-as-h1-main {
+        animation: moveInLeft 1s ease-in-out;
+      }
+      .styled-as-h1-sub {
+        animation: moveInRight 1s ease-in-out;  
+      }
+    }
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

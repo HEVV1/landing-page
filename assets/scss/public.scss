@@ -1,0 +1,30 @@
+// Abstracts - Variables, functions, mixins, and placeholders
+@import
+	'base/variables',
+	'base/mixins',
+	'base/fonts',
+	'../fonts/fontawesome-pro-5.12.0-web/css/all.min.css';
+// Vendors
+@import
+	'vendors/normalize',
+	'vendors/bootstrap/bootstrap-variables-override',
+	'../../assets/node_modules/bootstrap/scss/bootstrap-grid';
+// Base
+@import
+  'base/typography',
+  'base/base',
+	'base/helpers';
+// Components
+@import
+  'components/button';
+// Blocks
+@import
+	'layouts/header',
+	'layouts/form',
+	'layouts/footer';
+// Browser-specific overrides
+@import
+	'overrides/ff_only',
+	'overrides/safari_only',
+	'overrides/ie10+',
+	'overrides/print';

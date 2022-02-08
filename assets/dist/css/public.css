@@ -60,7 +60,7 @@
  * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 /* Document
-   ========================================================================== */
+  ========================================================================== */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -72,18 +72,23 @@ html {
   /* 3 */ }
 
 /* Sections
-   ========================================================================== */
+========================================================================== */
 /**
- * Remove the margin in all browsers (opinionated).
- */
-* {
+*Remove the margin in all browsers (opinionated).
+*/
+*,
+*:after,
+*:before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit; }
+
+body {
   box-sizing: border-box; }
 
 /**
  * Add the correct display in IE 9-.
- */
+*/
 article,
 aside,
 footer,
@@ -95,17 +100,17 @@ section {
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
- */
+*/
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
 /* Grouping content
-   ========================================================================== */
+  ========================================================================== */
 /**
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
- */
+*/
 figcaption,
 figure,
 main {
@@ -114,14 +119,14 @@ main {
 
 /**
  * Add the correct margin in IE 8.
- */
+*/
 figure {
   margin: 1em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
- */
+*/
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -518,7 +523,7 @@ template,
 
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
-    max-width: 1234px; } }
+    max-width: 123.4rem; } }
 
 .row {
   --bs-gutter-x: 54px;
@@ -3269,18 +3274,18 @@ h1,
 .styled-as-h1 {
   color: #FFFFFF;
   text-transform: uppercase; }
-  h1 .styled-as-h1-main,
-  .styled-as-h1 .styled-as-h1-main {
+  h1 .styled-as-h1--main,
+  .styled-as-h1 .styled-as-h1--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px; }
-  h1 .styled-as-h1-sub,
-  .styled-as-h1 .styled-as-h1-sub {
+    letter-spacing: 3.5rem; }
+  h1 .styled-as-h1--sub,
+  .styled-as-h1 .styled-as-h1--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px; }
+    letter-spacing: 1.74rem; }
 
 html {
   /* 
@@ -3291,7 +3296,7 @@ html {
 		That way it is easier to control potential future "text size change" procedure, which wouldn't affect such blocks.
 		To blocks that we would want to be changed by such a procedure, we would define their font size in rems through sass function.
 	*/
-  font-size: 16px;
+  font-size: 62.5%;
   /* 
 		When we put an element outside the viewports right side, 
 		then it causes Chrome DevTools Device Toolbar to render that element fully,
@@ -3315,9 +3320,8 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.7;
   font-weight: 400;
-  font-size: 16px;
-  overflow-x: hidden;
-  padding: 30px; }
+  font-size: 1.6rem;
+  overflow-x: hidden; }
 
 .wrapper-page {
   display: flex;
@@ -3331,7 +3335,7 @@ body {
 
 .wrapper-page-content {
   flex: 1 0 auto;
-  padding-bottom: 0px; }
+  padding-bottom: 0rem; }
 
 /* Media queries:
 	all - both screen and print (default)
@@ -3459,23 +3463,56 @@ btn:visited --> Visited link state
 */
 .btn:link,
 .btn:visited {
+  position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
-  transition: all .2s; }
+  border-radius: 10rem;
+  transition: all 0.2s; }
+  .btn:link:hover,
+  .btn:visited:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn:link:active,
+  .btn:visited:active {
+    transform: translateY(-0.1rem); }
+  .btn:link:after,
+  .btn:visited:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn:link:hover:after,
+  .btn:visited:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+  .btn:link.btn--white,
+  .btn:visited.btn--white {
+    background-color: #FFFFFF;
+    color: #000000; }
+    .btn:link.btn--white:after,
+    .btn:visited.btn--white:after {
+      background-color: #FFFFFF;
+      color: #000000; }
+  .btn:link.btn--animated,
+  .btn:visited.btn--animated {
+    animation: moveButton 1s ease-in-out 0.75s;
+    animation-fill-mode: backwards; }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px); }
-
-.btn-white {
-  background-color: #FFFFFF;
-  color: #000000; }
+@keyframes moveButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem); } }
 
 .block-header {
   height: 95vh;
@@ -3484,31 +3521,31 @@ btn:visited --> Visited link state
   background-position: top;
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
-  .block-header .logo-box {
+  .block-header .header__logo-wrapper {
     position: absolute;
-    top: 40px;
-    left: 40px; }
-    .block-header .logo-box img {
-      height: 35px; }
-  .block-header .wrapper-text-box {
+    top: 4rem;
+    left: 4rem; }
+    .block-header .header__logo-wrapper .header__logo {
+      height: 3.5rem; }
+  .block-header .header__text-wrapper {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align: center; }
-    .block-header .wrapper-text-box .styled-as-h1 {
+    .block-header .header__text-wrapper .styled-as-h1 {
       backface-visibility: hidden; }
-      .block-header .wrapper-text-box .styled-as-h1 .styled-as-h1-main {
+      .block-header .header__text-wrapper .styled-as-h1 .styled-as-h1--main {
         animation: moveInLeft 1s ease-in-out; }
-      .block-header .wrapper-text-box .styled-as-h1 .styled-as-h1-sub {
+      .block-header .header__text-wrapper .styled-as-h1 .styled-as-h1--sub {
         animation: moveInRight 1s ease-in-out; }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px); }
+    transform: translateX(-10rem); }
   80% {
-    transform: translateX(10px); }
+    transform: translateX(1rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -3516,9 +3553,9 @@ btn:visited --> Visited link state
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px); }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-10px); }
+    transform: translateX(-1rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }

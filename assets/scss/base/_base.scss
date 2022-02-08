@@ -7,7 +7,7 @@ html {
 		That way it is easier to control potential future "text size change" procedure, which wouldn't affect such blocks.
 		To blocks that we would want to be changed by such a procedure, we would define their font size in rems through sass function.
 	*/
-  font-size: 16px;
+  font-size: 62.5%; //Specify the rem value
   /* 
 		When we put an element outside the viewports right side, 
 		then it causes Chrome DevTools Device Toolbar to render that element fully,
@@ -32,8 +32,7 @@ body {
   line-height: $default_line_height;
   font-weight: $default_font_weight;
   font-size: $default_font_size;
-  overflow-x: hidden;
-  padding: 30px;
+  overflow-x: hidden;  
 }
 .wrapper-page {
   display: flex;
@@ -47,5 +46,5 @@ body {
 }
 .wrapper-page-content {
   flex: 1 0 auto;
-  padding-bottom: 0px;
+  padding-bottom: 0rem;
 }

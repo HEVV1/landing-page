@@ -6,27 +6,27 @@
   background-position: top;
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  .logo-box {
+  .header__logo-wrapper {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    img {
-      height: 35px;
+    top: 4rem;
+    left: 4rem;
+    .header__logo {
+      height: 3.5rem;
     }
   }
-  .wrapper-text-box {
+  .header__text-wrapper {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
-    .styled-as-h1{
+    .styled-as-h1 {
       backface-visibility: hidden;
-      .styled-as-h1-main {
+      .styled-as-h1--main {
         animation: moveInLeft 1s ease-in-out;
       }
-      .styled-as-h1-sub {
-        animation: moveInRight 1s ease-in-out;  
+      .styled-as-h1--sub {
+        animation: moveInRight 1s ease-in-out;
       }
     }
   }
@@ -34,10 +34,10 @@
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -47,10 +47,10 @@
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;

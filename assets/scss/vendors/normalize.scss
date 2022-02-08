@@ -7,8 +7,7 @@
  */
 
 /* Document
-   ========================================================================== */
-
+  ========================================================================== */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -19,24 +18,24 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 3 */
 }
-
 /* Sections
-   ========================================================================== */
-
+========================================================================== */
 /**
- * Remove the margin in all browsers (opinionated).
- */
-
-* {
+*Remove the margin in all browsers (opinionated).
+*/
+*,
+*:after,
+*:before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+body {
   box-sizing: border-box;
 }
-
 /**
  * Add the correct display in IE 9-.
- */
-
+*/
 article,
 aside,
 footer,
@@ -45,24 +44,20 @@ nav,
 section {
   display: block;
 }
-
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
- */
-
+*/
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-
 /* Grouping content
-   ========================================================================== */
-
+  ========================================================================== */
 /**
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
- */
+*/
 
 figcaption,
 figure,
@@ -73,7 +68,7 @@ main {
 
 /**
  * Add the correct margin in IE 8.
- */
+*/
 
 figure {
   margin: 1em 40px;
@@ -82,7 +77,7 @@ figure {
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
- */
+*/
 
 hr {
   box-sizing: content-box;

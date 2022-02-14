@@ -569,7 +569,7 @@ template,
 
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 123.4rem;
+    max-width: 119.4rem;
   }
 }
 .row {
@@ -5246,26 +5246,6 @@ template,
     display: none !important;
   }
 }
-h1,
-.styled-as-h1 {
-  color: #FFFFFF;
-  text-transform: uppercase;
-}
-h1 .styled-as-h1--main,
-.styled-as-h1 .styled-as-h1--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-}
-h1 .styled-as-h1--sub,
-.styled-as-h1 .styled-as-h1--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-}
-
 html {
   /* 
   	Define root font-size.
@@ -5319,6 +5299,44 @@ body {
 .wrapper-page-content {
   flex: 1 0 auto;
   padding-bottom: 0rem;
+}
+
+h1,
+.styled-as-h1 {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+h1 .styled-as-h1--main,
+.styled-as-h1 .styled-as-h1--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+h1 .styled-as-h1--sub,
+.styled-as-h1 .styled-as-h1--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+}
+
+h2,
+.styled-as-h2 {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ED56F, #28B485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s;
+}
+h2:hover,
+.styled-as-h2:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* Media queries:
@@ -5452,6 +5470,42 @@ input[type=number] {
   font-size: 11px;
 }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
 .text-left {
   text-align: left;
 }
@@ -5525,75 +5579,46 @@ btn:visited --> Visited link state
   animation-fill-mode: backwards;
 }
 
-@keyframes moveButton {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-.block-header {
-  height: 95vh;
+.layout-header {
+  height: 100vh;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../images/hero.jpg);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
-.block-header .header__logo-wrapper {
+.layout-header .header__logo-wrapper {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-.block-header .header__logo-wrapper .header__logo {
+.layout-header .header__logo-wrapper .header__logo {
   height: 3.5rem;
 }
-.block-header .header__text-wrapper {
+.layout-header .header__text-wrapper {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
 }
-.block-header .header__text-wrapper .styled-as-h1 {
+.layout-header .header__text-wrapper .styled-as-h1 {
   backface-visibility: hidden;
 }
-.block-header .header__text-wrapper .styled-as-h1 .styled-as-h1--main {
+.layout-header .header__text-wrapper .styled-as-h1 .styled-as-h1--main {
   animation: moveInLeft 1s ease-in-out;
 }
-.block-header .header__text-wrapper .styled-as-h1 .styled-as-h1--sub {
+.layout-header .header__text-wrapper .styled-as-h1 .styled-as-h1--sub {
   animation: moveInRight 1s ease-in-out;
 }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+.block-about {
+  background-color: #f7f7f7;
+  padding-top: 25rem;
+  padding-bottom: 25rem;
+  margin-top: -25vh;
 }
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
+
 /* Safari 10.1+ */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {

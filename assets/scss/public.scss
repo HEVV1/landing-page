@@ -1,29 +1,29 @@
 // Abstracts - Variables, functions, mixins, and placeholders
-@import
-	'base/variables',
-	'base/mixins',
-	'base/fonts';
+@import  'abstracts/variables';
+@import  'abstracts/mixins';
+@import  'abstracts/fonts';
 // Vendors
-@import
-	'vendors/normalize',
-	'vendors/bootstrap/bootstrap-variables-override',
-	'../../assets/node_modules/bootstrap/scss/bootstrap-grid';
+@import  'vendors/normalize';
+@import  'vendors/bootstrap/bootstrap-variables-override';
+@import  '../../assets/node_modules/bootstrap/scss/bootstrap-grid';
 // Base
-@import
-  'base/typography',
-  'base/base',
-	'base/helpers';
-// Components
-@import
-  'components/button';
+@import  'base/base';
+@import  'base/typography';
+@import  'base/helpers';
+@import  'base/animations';
+@import  'base/utilities';
+// Components 
+@import 'components/button';
 // Blocks
-@import
-	'layouts/header',
-	'layouts/form',
-	'layouts/footer';
+/////////////
+// Layouts
+@import  'layouts/header';
+@import  'layouts/form';
+@import  'layouts/footer';
+// Pages
+@import  'pages/home';
 // Browser-specific overrides
-@import
-	'overrides/ff_only',
-	'overrides/safari_only',
-	'overrides/ie10+',
-	'overrides/print';
+@import  'overrides/ff_only';
+@import  'overrides/safari_only';
+@import  'overrides/ie10+';
+@import  'overrides/print';

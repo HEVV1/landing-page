@@ -13,7 +13,6 @@ gulp.task('generate_css', function () {
 			sass_directory + '/*.scss' // multiple sources generate multiple css files
 		])
 		.pipe(sass({
-
 			sourceComments: false
 		}).on('error', sass.logError))
 		.pipe(inlineimage())

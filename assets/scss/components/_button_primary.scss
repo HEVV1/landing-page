@@ -1,0 +1,33 @@
+.btn-primary{
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba($color: $color_2, $alpha: 0.2);
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  &:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  &.btn-primary--white {
+    background-color: $color_1;
+    color: $color_2;
+    &:after {
+      background-color: $color_1;
+      color: $color_2;
+    }
+  }
+}

@@ -4,46 +4,15 @@ btn:visited --> Visited link state
 */
 .btn:link,
 .btn:visited {
-  position: relative;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
+  position: relative;
+  text-decoration: none;
   transition: all 0.2s;
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0.5rem 1rem rgba($color: $color_2, $alpha: 0.2);
-  }
   &:active {
-    transform: translateY(-0.1rem);
-  }
-  &:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-  &:hover:after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
-  &.btn--white {
-    background-color: $color_1;
-    color: $color_2;
-    &:after {
-      background-color: $color_1;
-      color: $color_2;
-    }
+    transform: translateY(-.5rem);
   }
   &.btn--animated {
-    animation: moveButton 1s ease-in-out 0.75s;
+    animation: moveButton 1s ease-in-out 0.5s;
     animation-fill-mode: backwards;
   }
 }

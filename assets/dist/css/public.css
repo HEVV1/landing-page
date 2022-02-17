@@ -52,6 +52,7 @@
 // }
 */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import "../fonts/fontawesome-pro-5.12.0-web/css/all.min.css";
 /*! SCSS version of normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -5276,7 +5277,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
-  color: #000000;
+  color: #777777;
   font-family: "Lato", sans-serif;
   line-height: 1.7;
   font-weight: 400;
@@ -5337,6 +5338,20 @@ h2:hover,
 .styled-as-h2:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+h3,
+.styled-as-h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p,
+.styled-as-p1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 !important;
 }
 
 /* Media queries:
@@ -5522,31 +5537,50 @@ input[type=number] {
   overflow: hidden;
 }
 
+/*Margin bottom*/
+.mb-20 {
+  margin-bottom: 2rem;
+}
+
+.mb-40 {
+  margin-bottom: 4rem;
+}
+
+.mb-80 {
+  margin-bottom: 8rem;
+}
+
 /*
 btn:link    --> Not visited link state
 btn:visited --> Visited link state
 */
 .btn:link,
 .btn:visited {
-  position: relative;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
+  position: relative;
+  text-decoration: none;
   transition: all 0.2s;
-}
-.btn:link:hover,
-.btn:visited:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 .btn:link:active,
 .btn:visited:active {
-  transform: translateY(-0.1rem);
+  transform: translateY(-0.5rem);
 }
-.btn:link:after,
-.btn:visited:after {
+.btn:link.btn--animated,
+.btn:visited.btn--animated {
+  animation: moveButton 1s ease-in-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.btn-primary {
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn-primary:after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -5558,25 +5592,66 @@ btn:visited --> Visited link state
   z-index: -1;
   transition: all 0.4s;
 }
-.btn:link:hover:after,
-.btn:visited:hover:after {
+.btn-primary:hover:after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.btn:link.btn--white,
-.btn:visited.btn--white {
+.btn-primary.btn-primary--white {
   background-color: #FFFFFF;
   color: #000000;
 }
-.btn:link.btn--white:after,
-.btn:visited.btn--white:after {
+.btn-primary.btn-primary--white:after {
   background-color: #FFFFFF;
   color: #000000;
 }
-.btn:link.btn--animated,
-.btn:visited.btn--animated {
-  animation: moveButton 1s ease-in-out 0.75s;
-  animation-fill-mode: backwards;
+
+.btn-text {
+  padding: 0.3rem;
+  transition: all 0.2s;
+  color: #55C57A;
+  border-bottom: 1px solid #55C57A;
+}
+.btn-text:hover {
+  background-color: #55C57A;
+  color: #FFFFFF;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn-text:active {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.block-composition {
+  position: relative;
+}
+.block-composition .composition-image {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.2rem;
+  outline-offset: 2rem;
+  transition: all 0.2s;
+}
+.block-composition .composition-image.composition-image--first {
+  left: 0;
+  top: 0;
+}
+.block-composition .composition-image.composition-image--second {
+  right: 0;
+  top: 4rem;
+}
+.block-composition .composition-image.composition-image--third {
+  left: 20%;
+  top: 13rem;
+}
+.block-composition .composition-image:hover {
+  outline: 1.5rem solid #55C57A;
+  transform: scale(1.2) !important;
+  z-index: 1;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
+}
+.block-composition:hover .composition-image:not(:hover) {
+  transform: scale(0.95);
 }
 
 .layout-header {
@@ -5617,6 +5692,9 @@ btn:visited --> Visited link state
   padding-top: 25rem;
   padding-bottom: 25rem;
   margin-top: -25vh;
+}
+.block-about .about-wrapper-content .about-wrapper-content-text:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 /* Safari 10.1+ */

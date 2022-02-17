@@ -3,4 +3,11 @@
   padding-top: 25rem;
   padding-bottom: 25rem;
   margin-top: -25vh;
+  .about-wrapper-content{
+    .about-wrapper-content-text{
+      &:not(:last-child){
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }

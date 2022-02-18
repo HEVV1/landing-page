@@ -23,29 +23,46 @@ h2,
   font-weight: 700;
   text-transform: uppercase;
   background-image: linear-gradient(to right, $color_3, $color_5);
-  --webkit-background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   transition: all $default_transition_time;
-  
-  &:hover{
+
+  &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
-    text-shadow: .5rem 1rem 2rem rgba($color: $color_2, $alpha: .2);
+    text-shadow: 0.5rem 1rem 2rem rgba($color: $color_2, $alpha: 0.2);
   }
 }
 
 h3,
-.styled-as-h3 {  
+.styled-as-h3 {
   font-size: $default_font_size;
   font-weight: 700;
-  text-transform: uppercase;  
+  text-transform: uppercase;
+}
+h4,
+.styled-as-h4 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $color_1;  
+  .styled-as-h4--1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-image: linear-gradient(to right bottom, 
+    rgba($color: $color_light_orange, $alpha: 0.85),
+    rgba($color: $color_dark_orange, $alpha: 0.85));    
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 
 p,
 .styled-as-p1 {
   font-size: $default_font_size;
   font-weight: 400;
-  margin: 0 !important;
 }
 
 // .text-style {

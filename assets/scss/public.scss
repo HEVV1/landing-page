@@ -3,7 +3,7 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/fonts";
-@import "../fonts/fontawesome-pro-5.12.0-web/css/all.min.css";
+// @import "../fonts/fontawesome-pro-5.12.0-web/css/all.min.css";
 // Vendors
 @import "vendors/normalize";
 @import "vendors/bootstrap/bootstrap-variables-override";
@@ -20,6 +20,8 @@
 @import "components/button_text";
 // Blocks
 @import "blocks/composition";
+@import "blocks/feature-box";
+@import "blocks/card";
 // Layouts
 @import "layouts/header";
 @import "layouts/form";

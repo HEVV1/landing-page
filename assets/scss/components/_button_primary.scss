@@ -30,4 +30,12 @@
       color: $color_2;
     }
   }
+  &.btn-primary--green {
+    background-color: $color_4;
+    color: $color_1;
+    &:after {
+      background-color: $color_4;
+      color: $color_1;
+    }
+  }
 }

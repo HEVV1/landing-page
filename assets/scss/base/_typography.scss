@@ -88,6 +88,9 @@ p,
 .styled-as-p1 {
   font-size: $default_font_size;
   font-weight: 400;
+  &.styled-as-p1--white{
+    color: $color_medium_grey;
+  }
 }
 
 /*

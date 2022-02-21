@@ -22,10 +22,12 @@
 @import "blocks/composition";
 @import "blocks/feature-box";
 @import "blocks/card";
+@import "blocks/popup";
 // Layouts
 @import "layouts/header";
 @import "layouts/form";
 @import "layouts/footer";
+@import "layouts/navigation";
 // Pages
 @import "pages/home";
 // Browser-specific overrides

@@ -31,3 +31,12 @@
     }
   }
 }
+
+@include res('md'){
+  .layout-header {
+    height: 80vh;
+    .header__text-wrapper {
+      top: 35%;
+    }
+  }
+}

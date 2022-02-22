@@ -1,5 +1,6 @@
 .block-composition {
   position: relative;
+  min-height: 40rem;
   .composition-image {
     position: absolute;
     width: 55%;
@@ -23,12 +24,39 @@
       outline: 1.5rem solid $color_4;
       transform: scale(1.2) !important;
       z-index: 1;
-      box-shadow: 0 1rem 4rem rgba($color: $color_2, $alpha: 0.5);      
+      box-shadow: 0 1rem 4rem rgba($color: $color_2, $alpha: 0.5);
     }
   }
   &:hover {
-    .composition-image:not(:hover){
-      transform: scale(.95);
-    }    
-  }  
+    .composition-image:not(:hover) {
+      transform: scale(0.95);
+    }
+  }
+}
+
+@include res("md") {
+  .block-composition {
+    min-height: 25rem;
+    .composition-image {
+      width: 40%;     
+      outline-offset: 0.7rem;
+      &:hover {
+        outline: 1rem solid $color_4;
+        transform: scale(1.01) !important;
+      }
+      &.composition-image--first {
+        left: 0;
+        top: 2rem;
+      }
+      &.composition-image--second {
+        right: 0;
+        top: 2rem;
+      }
+      &.composition-image--third {
+        left: 31%;
+        
+        top: 1rem;    
+      }
+    }
+  }
 }

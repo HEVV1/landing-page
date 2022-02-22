@@ -1,6 +1,13 @@
 /* Colors -----------------------------------------------------------------*/
 /* Fonts ------------------------------------------------------------------*/
 /* Other ------------------------------------------------------------------*/
+/*
+xs: 0       --> ZERO
+sm: 576px   --> MOBILE
+md: 768px   --> TABLET PORTRAIT
+lg: 992px   --> TABLE LANDSCAPE
+xl: 1200px  --> DESKTOP or where just normal style apply
+*/
 /*  Ways to include fonts:
 	URL references to outside server:
 		+ for an example, if it's a google font, there is a high chance their servers have less latency and better caching mechanism
@@ -5301,6 +5308,11 @@ body {
   padding-bottom: 0rem;
 }
 
+@media (max-width: 767px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
 h1,
 .styled-as-h1 {
   color: #FFFFFF;
@@ -5382,7 +5394,6 @@ h4 .styled-as-h4--1.styled-as-h4--background-blue,
 
 p,
 .styled-as-p1 {
-  font-size: 1.6rem;
   font-weight: 400;
 }
 p.styled-as-p1--white,
@@ -5427,6 +5438,23 @@ p.styled-as-p1--white,
   }
 }
 */
+@media (max-width: 767px) {
+  h1 .styled-as-h1--main,
+.styled-as-h1 .styled-as-h1--main {
+    font-size: 3rem;
+    letter-spacing: 1.5rem;
+  }
+  h1 .styled-as-h1--sub,
+.styled-as-h1 .styled-as-h1--sub {
+    font-size: 1.6rem;
+    letter-spacing: 1rem;
+  }
+
+  h2,
+.styled-as-h2 {
+    font-size: 2rem;
+  }
+}
 /* Media queries:
 	all - both screen and print (default)
 	screen - desktop and mobile devices with screen
@@ -5449,34 +5477,34 @@ a, button {
   outline: none !important;
 }
 
+/* WebKit, Blink, Edge */
 ::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
   color: rgba(0, 0, 0, 0.3);
   font-weight: 500;
 }
 
+/* Mozilla Firefox 4 to 18 */
 :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
   color: rgba(0, 0, 0, 0.3);
   font-weight: 500;
   opacity: 1;
 }
 
+/* Mozilla Firefox 19+ */
 ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
   color: rgba(0, 0, 0, 0.3);
   font-weight: 500;
   opacity: 1;
 }
 
+/* Internet Explorer 10-11 */
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(0, 0, 0, 0.3);
   font-weight: 500;
 }
 
+/* Microsoft Edge */
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: rgba(0, 0, 0, 0.3);
   font-weight: 500;
 }
@@ -5709,6 +5737,7 @@ btn:visited --> Visited link state
 
 .block-composition {
   position: relative;
+  min-height: 40rem;
 }
 .block-composition .composition-image {
   position: absolute;
@@ -5740,6 +5769,31 @@ btn:visited --> Visited link state
   transform: scale(0.95);
 }
 
+@media (max-width: 767px) {
+  .block-composition {
+    min-height: 25rem;
+  }
+  .block-composition .composition-image {
+    width: 40%;
+    outline-offset: 0.7rem;
+  }
+  .block-composition .composition-image:hover {
+    outline: 1rem solid #55C57A;
+    transform: scale(1.01) !important;
+  }
+  .block-composition .composition-image.composition-image--first {
+    left: 0;
+    top: 2rem;
+  }
+  .block-composition .composition-image.composition-image--second {
+    right: 0;
+    top: 2rem;
+  }
+  .block-composition .composition-image.composition-image--third {
+    left: 31%;
+    top: 1rem;
+  }
+}
 .block-feature-box {
   text-align: center;
   padding: 2.2rem;
@@ -5963,6 +6017,14 @@ btn:visited --> Visited link state
   animation: moveInRight 1s ease-in-out;
 }
 
+@media (max-width: 767px) {
+  .layout-header {
+    height: 80vh;
+  }
+  .layout-header .header__text-wrapper {
+    top: 35%;
+  }
+}
 .layout-footer {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -5985,12 +6047,15 @@ btn:visited --> Visited link state
 }
 .layout-footer .footer-list .footer-item {
   display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .layout-footer .footer-list .footer-item .footer-link:link, .layout-footer .footer-list .footer-item .footer-link:visited {
   display: inline-block;
   color: #FFFFFF;
   text-transform: uppercase;
   transition: all 0.2s;
+  text-align: center;
 }
 .layout-footer .footer-list .footer-item .footer-link:hover {
   text-decoration: underline;
@@ -6006,6 +6071,21 @@ btn:visited --> Visited link state
   transform: rotate(5deg) scale(1.05);
 }
 
+@media (max-width: 991px) {
+  .layout-footer .footer-logo-wrapper {
+    margin-bottom: 4rem;
+  }
+  .layout-footer .footer-list {
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+  .layout-footer .footer-list .footer-item {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
 .block-navigation .navigation-checkbox {
   display: none;
 }
@@ -6157,6 +6237,16 @@ btn:visited --> Visited link state
   margin-right: 1.5rem;
 }
 
+@media (max-width: 767px) {
+  .block-navigation .navigation-button {
+    top: 3rem;
+    right: 3rem;
+  }
+  .block-navigation .navigation-background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+}
 .block-about {
   min-height: 80vh;
   padding-top: 25rem;
@@ -6194,6 +6284,19 @@ btn:visited --> Visited link state
   background-color: #f7f7f7;
 }
 
+@media (max-width: 767px) {
+  .block-about {
+    margin-top: -20rem;
+  }
+
+  .block-features {
+    clip-path: polygon(0% 100%, 100% 95%, 100% 0%, 0 5%);
+  }
+
+  .block-tours {
+    padding-bottom: 25rem;
+  }
+}
 /* Safari 10.1+ */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {

@@ -1,6 +1,6 @@
 @mixin bgimgin( $file:'', $important: null ){
 	@if $important == important {
-		$important: !important;
+		$important: '' !important;
 	} @else {
 		$important: null;
 	}
@@ -16,7 +16,7 @@
 @mixin boxy-shadow( $parameters, $important: null ) {
 	$parameters: unquote($parameters);
 	@if $important == important {
-		$important: !important;
+		$important: '' !important;
 	} @else {
 		$important: null;
 	}
@@ -44,25 +44,41 @@
 }
 
 @mixin placeholder {
-	@include optional-at-root('::-webkit-input-placeholder') {/* WebKit, Blink, Edge */
-		@content;
-	}
+  /* WebKit, Blink, Edge */
+	@include optional-at-root('::-webkit-input-placeholder') { @content; }
+  /* Mozilla Firefox 4 to 18 */
+	@include optional-at-root(':-moz-placeholder') { @content; opacity:  1; }
+  /* Mozilla Firefox 19+ */
+	@include optional-at-root('::-moz-placeholder') { @content; opacity: 1; }
+  /* Internet Explorer 10-11 */
+	@include optional-at-root(':-ms-input-placeholder') {	@content;	}
+  /* Microsoft Edge */
+	@include optional-at-root('::-ms-input-placeholder') { @content; }
+}
 
-	@include optional-at-root(':-moz-placeholder') {/* Mozilla Firefox 4 to 18 */
-		@content;
-		opacity:  1;
-	}
+//Media Query manager
+/*
+xs: 0       --> ZERO
+sm: 576px   --> MOBILE
+md: 768px   --> TABLET PORTRAIT
+lg: 992px   --> TABLE LANDSCAPE
+xl: 1200px  --> DESKTOP or where just normal style apply
+*/
 
-	@include optional-at-root('::-moz-placeholder') {/* Mozilla Firefox 19+ */
-		@content;
-		opacity:  1;
-	}
-
-	@include optional-at-root(':-ms-input-placeholder') {/* Internet Explorer 10-11 */
-		@content;
-	}
-
-	@include optional-at-root('::-ms-input-placeholder') {/* Microsoft Edge */
-		@content;
-	}
+@mixin res($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xs') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'sm' {
+    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'sm') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'md' {
+    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'md') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'lg' {
+    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'lg') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'xl' {
+    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xl') - 1px)) { @content; }
+  }
 }

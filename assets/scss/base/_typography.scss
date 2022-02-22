@@ -85,10 +85,9 @@ h4,
 }
 
 p,
-.styled-as-p1 {
-  font-size: $default_font_size;
+.styled-as-p1 { 
   font-weight: 400;
-  &.styled-as-p1--white{
+  &.styled-as-p1--white {
     color: $color_medium_grey;
   }
 }
@@ -130,3 +129,21 @@ p,
   }
 }
 */
+
+@include res("md") {
+  h1,
+  .styled-as-h1 {
+    .styled-as-h1--main {
+      font-size: 3rem;
+      letter-spacing: 1.5rem;
+    }
+    .styled-as-h1--sub {
+      font-size: $default_font_size;
+      letter-spacing: 1rem;
+    }
+  }
+  h2,
+  .styled-as-h2 {
+    font-size: 2rem;
+  }
+}

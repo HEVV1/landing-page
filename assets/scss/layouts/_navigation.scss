@@ -143,3 +143,16 @@
     }
   }
 }
+
+@include res('md'){
+  .block-navigation {
+    .navigation-button {
+      top: 3rem;
+      right: 3rem;
+    }
+    .navigation-background {      
+      top: 3.5rem;
+      right: 3.5rem;      
+    }
+  }
+}

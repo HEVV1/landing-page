@@ -104,7 +104,8 @@
     .card-wrapper {
       &.card-wrapper--front {
         .card-wrapper-image {
-          background-image: linear-gradient(to right bottom, $color_light_blue, $color_dark_blue), url(../../images/nat-7.jpg);
+          background-image: linear-gradient(to right bottom, $color_light_blue, $color_dark_blue),
+            url(../../images/nat-7.jpg);
         }
       }
       &.card-wrapper--back {

@@ -18,13 +18,16 @@
     justify-content: space-between;
     .footer-item {
       display: inline-block;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
       .footer-link {
         &:link,
         &:visited {
           display: inline-block;
           color: $color_1;
           text-transform: uppercase;
-          transition: all .2s;
+          transition: all 0.2s;
+          text-align: center;
         }
 
         &:hover {
@@ -34,12 +37,12 @@
     }
   }
   .footer-wrapper-copyright-text {
-    .footer-link {      
+    .footer-link {
       &:link,
       &:visited {
         display: inline-block;
-        color: $color_1;        
-        transition: all .2s;
+        color: $color_1;
+        transition: all 0.2s;
       }
       &:hover,
       &:active {
@@ -47,6 +50,26 @@
         box-shadow: 0rem 1rem 2rem rgba($color: $color_2, $alpha: 4);
         transform: rotate(5deg) scale(1.05);
       }
+    }
+  }
+}
+
+@include res("lg") {
+  .layout-footer {
+    .footer-logo-wrapper {
+      margin-bottom: 4rem;
+    }
+    .footer-list {
+      margin-bottom: 5rem;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      .footer-item {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .footer-wrapper-copyright-text {
     }
   }
 }

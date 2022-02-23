@@ -1,0 +1,45 @@
+.block-input {
+  &:not(:last-child){
+    margin-bottom: 2rem;
+  }
+  .form-group {
+    input {
+      &:not([type="checkbox"]),
+      &:not([type="radio"]),
+      &:not([type="file"]) {
+        height: 50px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.6rem;
+        border-radius: 2px;
+        font-weight: 300;
+        transition: all $default_transition_time;
+        border-bottom: 3px solid rgba($color: $color_red, $alpha: 0);
+      }
+      &:focus {
+        border-bottom: 3px solid rgba($color: $color_red, $alpha: 1);
+        outline-offset: 0;
+        outline: 0;
+      }
+      &:not(:placeholder-shown) {
+        border-bottom: 3px solid rgba($color: $color_5, $alpha: 1);
+        ~ label {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);          
+        }
+      }
+    }
+
+    label {
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-4rem);
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: all $default_transition_time;
+    }
+  }
+}

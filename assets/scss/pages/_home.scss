@@ -33,21 +33,43 @@
 .block-tours {
   min-height: 80vh;
   padding-top: 25rem;
-  padding-bottom: 50rem;
+  padding-bottom: 25rem;
   margin-top: -20vh;
   display: flex;
   align-items: center;
   background-color: $color_light_grey;
 }
 
+.block-stories {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  overflow: hidden;  
+  .stories-background-video-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+    opacity: .15;
+    z-index: -1;
+    .stories-background-video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 @include res("md") {
   .block-about {
     margin-top: -20rem;
   }
-  .block-features {    
+  .block-features {
     clip-path: polygon(0% 100%, 100% 95%, 100% 0%, 0 5%);
-  }
-  .block-tours {   
-    padding-bottom: 25rem;    
   }
 }

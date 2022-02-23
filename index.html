@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,12 +90,15 @@
                 </div>
                 <div class="col col-24 col-md-12">
                   <div class="block-composition">
-                    <img src="./assets/images/nat-1-large.jpg" alt="Image 1"
-                      class="composition-image composition-image--first">
-                    <img src="./assets/images/nat-2-large.jpg" alt="Image 2"
-                      class="composition-image composition-image--second">
-                    <img src="./assets/images/nat-3-large.jpg" alt="Image 3"
-                      class="composition-image composition-image--third">
+                    <img srcset="./assets/images/nat-1.jpg 300w, ./assets/images/nat-1-large.jpg 1000w"
+                      sizes="(max-width: 992px) 20vw, (max-width: 768px) 30vw, 300px" , alt="Photo 1"
+                      class="composition-image composition-image--first" src="./assets/images/nat-1-large.jpg">
+                    <img srcset="./assets/images/nat-2.jpg 300w, ./assets/images/nat-2-large.jpg 1000w"
+                      sizes="(max-width: 992px) 20vw, (max-width: 768px) 30vw, 300px" , alt="Photo 2"
+                      class="composition-image composition-image--second" src="./assets/images/nat-2-large.jpg">
+                    <img srcset="./assets/images/nat-3.jpg 300w, ./assets/images/nat-3-large.jpg 1000w"
+                      sizes="(max-width: 992px) 20vw, (max-width: 768px) 30vw, 300px" , alt="Photo 3"
+                      class="composition-image composition-image--third" src="./assets/images/nat-3-large.jpg">
                   </div>
                 </div>
               </div>
@@ -185,7 +189,9 @@
                     <div class="card-wrapper-image"></div>
                     <h4 class="styled-as-h4">
                       <span class="styled-as-h4--1 styled-as-h4--background-orange">
-                        THE SEA EXPLORER
+                        THE SEA
+                        <br>
+                        EXPLORER
                       </span>
                     </h4>
                     <div class="card-details">
@@ -213,7 +219,9 @@
                     <div class="card-wrapper-image"></div>
                     <h4 class="styled-as-h4">
                       <span class="styled-as-h4--1 styled-as-h4--background-green">
-                        the forest hiker
+                        the forest
+                        <br>
+                        hiker
                       </span>
                     </h4>
                     <div class="card-details">
@@ -241,7 +249,9 @@
                     <div class="card-wrapper-image"></div>
                     <h4 class="styled-as-h4">
                       <span class="styled-as-h4--1 styled-as-h4--background-blue">
-                        the snow adventurer
+                        the snow
+                        <br>
+                        adventurer
                       </span>
                     </h4>
                     <div class="card-details">
@@ -269,13 +279,97 @@
             </div>
           </div>
         </section>
+        <section class="block-stories">
+          <div class="stories-background-video-wrapper">
+            <video class="stories-background-video" autoplay="autoplay" muted loop
+              src="./assets/images/video.mp4"></video>
+          </div>
+          <div class="container">
+            <div class="stories-wrapper-heading text-center mb-80">
+              <h2 class="styled-as-h2">we make people genuinely happy</h2>
+            </div>
+            <div class="block-story">
+              <figure class="story-shape">
+                <img src="./assets/images/nat-8.jpg" alt="" class="story-image">
+                <figcaption class="story-caption">Mary Smith</figcaption>
+              </figure>
+              <div class="story-content">
+                <h3 class="styled-as-h3 mb-15">i had the best week ever with my family</h3>
+                <p class="styled-as-p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatibus
+                  aliquid eum excepturi dolore qui suscipit doloribus expedita vel ex aperiam, neque fugit consequuntur
+                  sit tempore tempora nemo autem minima!</p>
+              </div>
+            </div>
+            <div class="block-story">
+              <figure class="story-shape">
+                <img src="./assets/images/nat-9.jpg" alt="" class="story-image">
+                <figcaption class="story-caption">Jack Wilson</figcaption>
+              </figure>
+              <div class="story-content">
+                <h3 class="styled-as-h3 mb-15">wow! my life is completely DIFFERENT now</h3>
+                <p class="styled-as-p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatibus
+                  aliquid eum excepturi dolore qui suscipit doloribus expedita vel ex aperiam, neque fugit consequuntur
+                  sit tempore tempora nemo autem minima!</p>
+              </div>
+            </div>
+            <div class="stories-wrapper-button text-center">
+              <a href="#" class="btn btn-text">Read All Stories
+                <span class="icon">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="block-form">
+          <div class="container">
+            <div class="form-book">
+              <div class="form-book-wrapper-heading mb-40">
+                <h2 class="styled-as-h2">Start booking now</h2>
+              </div>
+
+              <form id="id_form_1" class="form-layout">
+                <div class="block-input">
+                  <div class="form-group">
+                    <input type="text" id="full_name" class="form-control" name="full_name" placeholder="Full name">
+                    <label for="full_name">Full Name</label>
+                  </div>
+                </div>
+                <div class="block-input">
+                  <div class="form-group">
+                    <input type="email" id="email_address" class="form-control" name="email_address" placeholder="Email address">
+                    <label for="email_address">Email address</label>
+                  </div>
+                </div>
+                <div class="block-radio">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="checkbox_registration" value="small_group" id="small_group">
+                    <label class="form-check-label" for="small_group"></label>
+                  </div>
+                </div>
+                <div class="block-radio">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="checkbox_registration" value="small_group" id="small_group">
+                    <label class="form-check-label" for="small_group"></label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-primary--green">NEXT STEP
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+              </form>
+              
+            </div>
+          </div>
+        </section>
       </main>
     </div>
     <footer class="layout-footer">
       <div class="container">
         <div class="footer-logo-wrapper">
           <a href="#">
-            <img src="./assets/images/logo-green-2x.png" alt="Footer Logo" class="footer-logo">
+            <picture class="footer-logo">
+              <source srcset="./assets/images/logo-green-small-1x.png 1x, ./assets/images/logo-green-small-2x.png 2x"
+                media="(max-width: 768px)">
+              <img srcset="./assets/images/logo-green-1x.png 1x, ./assets/images/logo-green-2x.png 2x" alt="Full Logo">
+            </picture>
           </a>
         </div>
         <div class="row d-flex justify-content-between">
@@ -324,7 +418,7 @@
           <img src="./assets/images/nat-8.jpg" alt="Tour photo" class="popup-image">
           <img src="./assets/images/nat-9.jpg" alt="Tour photo" class="popup-image">
         </div>
-        <div class="popup-content-right">          
+        <div class="popup-content-right">
           <div class="popup-wrapper-text-heading">
             <h2 class="styled-as-h2">start booking now</h2>
           </div>
@@ -345,11 +439,14 @@
               minus eos molestiae ducimus eveniet ut et, nostrum quo ea atque earum temporibus deleniti, dicta alias.
             </p>
           </div>
-          <a href="#" class="btn btn-primary btn-primary--green">Book now</a>        
+          <div class="popup-wrapper-button">
+            <a href="#" class="btn btn-primary btn-primary--green">Book now</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/4ccde57849.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

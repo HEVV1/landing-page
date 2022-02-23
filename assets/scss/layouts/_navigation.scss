@@ -144,15 +144,57 @@
   }
 }
 
-@include res('md'){
+@include res("md") {
   .block-navigation {
     .navigation-button {
+      width: 4rem;
+      height: 4rem;
       top: 3rem;
       right: 3rem;
+      &:hover {
+        .navigation-button-icon {
+          &::before {
+            top: -0.8rem;
+          }
+          &::after {
+            top: 0.8rem;
+          }
+        }
+      }
+      .navigation-button-icon {
+        &,
+        &::before,
+        &::after {
+          width: 2rem;
+        }
+        &::before {
+          top: -0.7rem;
+        }
+        &::after {
+          top: 0.7rem;
+        }
+      }
     }
-    .navigation-background {      
+    .navigation-background {
       top: 3.5rem;
-      right: 3.5rem;      
+      right: 3.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .navigation-nav {
+      .navigation-list {
+        .navigation-item {
+          margin: 0;
+          .navigation-link {
+            &:link,
+            &:visited {
+              font-size: 2rem;
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }

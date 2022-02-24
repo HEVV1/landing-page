@@ -1,7 +1,54 @@
-.block-radio{  
-  .form-check{
-    input[type="radio"]{
-      
+.block-radio {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  .form-check {
+    input[type="radio"] {
+      display: none;
+      & + label {
+        padding-left: 40px;
+        position: relative;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        .checkbox-base {
+          position: absolute;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          flex: 1 0 auto;
+          width: 27px;
+          height: 27px;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          border: 5px solid $color_4;
+          &::before {
+            content: "";
+            display: block;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background-color: $color_4;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s;
+          }
+        }
+      }
+      &:checked {
+        & + label {
+          .checkbox-base {
+            &::before {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 }

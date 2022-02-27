@@ -1,11 +1,14 @@
 .layout-header {
   height: 100vh;
   background-image: linear-gradient(to right, rgba($color: $color_3, $alpha: 0.8), rgba($color: $color_5, $alpha: 0.8)),
-    url(../../images/hero.jpg);
+    url(../../images/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  background-repeat: no-repeat;  
+  @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  }
   .header__logo-wrapper {
     position: absolute;
     top: 4rem;
@@ -32,7 +35,22 @@
   }
 }
 
-@include res('md'){
+// Resolution
+@media 
+(min-resolution: 192dpi) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)), 
+(-webkit-min-device-pixel-ratio: 2) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)), 
+(min-width: 2000px) {
+  .layout-header {
+    background-image: linear-gradient(
+      to right,
+      rgba($color: $color_3, $alpha: 0.8),
+      rgba($color: $color_5, $alpha: 0.8)
+    ),
+    url(../../images/hero.jpg);
+  }
+}
+
+@include res("md") {
   .layout-header {
     height: 80vh;
     .header__text-wrapper {

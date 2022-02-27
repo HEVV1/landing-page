@@ -5836,7 +5836,6 @@ btn:visited --> Visited link state
 
 .block-composition {
   position: relative;
-  min-height: 40rem;
 }
 .block-composition .composition-image {
   position: absolute;
@@ -5927,6 +5926,7 @@ btn:visited --> Visited link state
   top: 0;
   left: 0;
   transition: all 0.8s ease;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -6011,11 +6011,17 @@ btn:visited --> Visited link state
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 11;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
+}
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+  .block-popup {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 .block-popup:target {
   opacity: 1;
@@ -6201,11 +6207,16 @@ btn:visited --> Visited link state
 }
 .layout-header {
   height: 100vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../images/hero.jpg);
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../images/hero-small.jpg);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+  .layout-header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  }
 }
 .layout-header .header__logo-wrapper {
   position: absolute;
@@ -6232,6 +6243,11 @@ btn:visited --> Visited link state
   animation: moveInRight 1s ease-in-out;
 }
 
+@media (min-resolution: 192dpi) and (min-width: 767px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 767px), (min-width: 2000px) {
+  .layout-header {
+    background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../images/hero.jpg);
+  }
+}
 @media (max-width: 767px) {
   .layout-header {
     height: 80vh;

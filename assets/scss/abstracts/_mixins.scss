@@ -67,18 +67,18 @@ xl: 1200px  --> DESKTOP or where just normal style apply
 
 @mixin res($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xs') - 1px)) { @content; }
+    @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xs') - 1px)) { @content; }
   }
   @if $breakpoint == 'sm' {
-    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'sm') - 1px)) { @content; }
+    @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'sm') - 1px)) { @content; }
   }
   @if $breakpoint == 'md' {
-    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'md') - 1px)) { @content; }
+    @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'md') - 1px)) { @content; }
   }
   @if $breakpoint == 'lg' {
-    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'lg') - 1px)) { @content; }
+    @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'lg') - 1px)) { @content; }
   }
   @if $breakpoint == 'xl' {
-    @media (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xl') - 1px)) { @content; }
+    @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xl') - 1px)) { @content; }
   }
 }

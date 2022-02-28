@@ -1,9 +1,9 @@
 .block-feature-box {
   text-align: center;
   padding: 2.2rem;
-  background-color: rgba($color: $color_1, $alpha: 0.8);
+  background-color: rgba($color: $color_white, $alpha: 0.8);
   border-radius: .3rem;
-  box-shadow: 0 1.5rem 4rem rgba($color: $color_2, $alpha: 0.15);
+  box-shadow: 0 1.5rem 4rem rgba($color: $color_black, $alpha: 0.15);
   transition: transform .2s;
   .feature-box-wrapper-icon {
     margin-bottom: 4rem;

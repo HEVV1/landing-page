@@ -1,15 +1,15 @@
 .btn-text {
   padding: 0.3rem;
   transition: all 0.2s;
-  color: $color_4;
-  border-bottom: 1px solid $color_4;
+  color: $color_primary;
+  border-bottom: 1px solid $color_primary;
   &:hover {
-    background-color: $color_4;
-    color: $color_1;
-    box-shadow: 0 1rem 2rem rgba($color: $color_2, $alpha: 0.15);
+    background-color: $color_primary;
+    color: $color_white;
+    box-shadow: 0 1rem 2rem rgba($color: $color_black, $alpha: 0.15);
     transform: translateY(-2px);
   }
   &:active {
-    box-shadow: 0 1rem 1rem rgba($color: $color_2, $alpha: 0.15);
+    box-shadow: 0 1rem 1rem rgba($color: $color_black, $alpha: 0.15);
   }
 }

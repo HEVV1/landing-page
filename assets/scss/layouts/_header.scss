@@ -4,8 +4,8 @@
     url(../../images/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat;  
-  @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+  background-repeat: no-repeat;
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   }
@@ -36,17 +36,16 @@
 }
 
 // Resolution
-@media 
-(min-resolution: 192dpi) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)), 
-(-webkit-min-device-pixel-ratio: 2) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)), 
-(min-width: 2000px) {
+@media only screen and (min-resolution: 192dpi) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)),
+  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: calc(map-get($map: $grid-breakpoints, $key: "md") - 1px)),
+  only screen and (min-width: 2000px) {
   .layout-header {
     background-image: linear-gradient(
-      to right,
-      rgba($color: $color_3, $alpha: 0.8),
-      rgba($color: $color_5, $alpha: 0.8)
-    ),
-    url(../../images/hero.jpg);
+        to right,
+        rgba($color: $color_3, $alpha: 0.8),
+        rgba($color: $color_5, $alpha: 0.8)
+      ),
+      url(../../images/hero.jpg);
   }
 }
 

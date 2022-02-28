@@ -11,7 +11,7 @@
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba($color: $color_2, $alpha: 0.8);
+    background-color: rgba($color: $color_black, $alpha: 0.8);
   }
   &:target {
     opacity: 1;
@@ -33,7 +33,7 @@
       line-height: 0.5;
     }
     &:hover {
-      color: $color_4;
+      color: $color_primary;
     }
   }
   .popup-content {
@@ -45,8 +45,8 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) scale(0);
-    background-color: $color_1;
-    box-shadow: 0 2rem 4rem rgba($color: $color_2, $alpha: 0.2);
+    background-color: $color_white;
+    box-shadow: 0 2rem 4rem rgba($color: $color_black, $alpha: 0.2);
     border-radius: 0.3rem;
     transition: all 0.3s;
     .popup-content-left {
